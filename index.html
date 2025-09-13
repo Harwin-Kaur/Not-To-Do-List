@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
 
     <!-- Bootstrap cdn -->
 
@@ -12,6 +13,17 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <style>
+        .wrapper{
+            background: linear-gradient(rgba(255, 0, 0, 0.453), rgba(128, 0, 128, 0.547));
+            min-height: 100vh;
+        }
+
+        .table{
+            --bs-table-bg: transparent;
+        }
+    </style>
+
     <title>NTDL</title>
 
     <link rel="stylesheet" href="style.css">
@@ -19,8 +31,65 @@
 </head>
 <body>
 
-    <button class="btn btn-danger">Click Me <i class="fa-solid fa-house"></i></button>
+    <div class="wrapper pt-5">
+        <!-- title -->
+        <div class="container">
+            <h1 class="text-center">Not To Do List</h1>
+        
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <!-- form -->
+<form onsubmit="handleOnSubmit(this)" action="javascript:void(0)"  class="border p-5 rounded shadow-lg mt-5">
+
+    <div class="row g-2">
+       <div class="col-md-7">  <!-- to make it responsive we used md which is breakpoint -->
+            <input type="text" class="form-control" placeholder="task" aria-label="First name" name="task" id="task">
+        </div>
+        <div class="col-md-2">
+            <input type="number" class="form-control" placeholder="40" aria-label="Last name" name="hr" min="1">
+        </div>
+    
+    <div class="col-md-3 d-grid">
+        <button class="btn btn-primary">Add New Task</button>
+    </div>
+
+        <!-- Entry List tables -->
+         <div class="row mt-5">
+            <div class="col"> 
+                <h3 class="text-center">Entry List</h3>
+                <hr/>
+        <table class="table table-striped-hover border">
+        
+            <tbody id="entryList">----
+            </tbody>
+        </table>
+        </div>
+         <!-- Bad List tables -->
+            <div class="col-md-6"> 
+                <h3 class="text-center">Bad List</h3>
+                <hr/>
+
+        <table class="table table-striped-hover border">
+        
+            <tbody>
+                <tr>
+                <td>1</td>
+                <td>Sleeping</td>
+                <td>40hr</td>
+                <td class="text-end">
+                    <button class="button btn btn-warning"> <i class="fa-solid fa-arrow-left"></i></button>
+                    <button class="button btn btn-danger"> <i class="fa-solid fa-trash"></i></button>
+                </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="alert alert-success">You could have saved 50 hrs</div>
+        </form>
+        </div>
+    </div>
+    <div class="alert alert-success">You could have saved 50 hrs</div>
+
+    <script src="script.js"></script>
+    
 </body>
 </html>
