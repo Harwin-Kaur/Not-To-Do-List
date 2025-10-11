@@ -61,7 +61,7 @@ const displayEntryList = () => {
 }
 
 
-const displayBadList = () => {
+const displaybadList = () => {
     
     let str = "";
 
@@ -105,7 +105,7 @@ const handleOnDelete = (id) => {
 if(window.confirm("Are you sure to delete?")){
     taskList = taskList.filter((item) => item.id !== id);
     displayEntryList();
-    displayBadList();
+    displaybadList();
    }
 }
 const switchTask = (id, type) =>{
@@ -117,7 +117,7 @@ const switchTask = (id, type) =>{
     }); 
 
     displayEntryList();
-    displayBadList();
+    displaybadList();
 };
 
 const taskTotal = () => {
