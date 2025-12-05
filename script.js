@@ -1,6 +1,6 @@
 let taskList = [];
 
-const hoursPerWeek = 24 * 7;
+const hoursperWeek = 24 * 7;
 
 const handleOnSubmit = (e) => {
     // const elm = document.getElementById("task");
